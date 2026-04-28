@@ -28,7 +28,7 @@ export default function Nav() {
         <img
           src={logo}
           alt="CMD+G"
-          className="h-[10px] w-auto opacity-90 group-hover:opacity-100 transition"
+          className="h-[20px] w-auto opacity-90 group-hover:opacity-100 transition"
         />
       </a>
 

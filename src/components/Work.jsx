@@ -66,7 +66,7 @@ export default function Work() {
     <section id="work" className="py-32 px-6 max-w-7xl mx-auto">
       <div className="flex justify-between items-baseline mb-20 border-b border-neutral-900 pb-6">
         <h2 className="text-3xl font-medium tracking-tight">
-          <span className="text-neutral-500">⌘O</span> this project.
+          ⌘O this project.
         </h2>
         <span className="font-mono text-xs text-neutral-500 hidden md:block">
           — add images + links when ready
