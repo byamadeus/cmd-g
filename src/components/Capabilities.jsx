@@ -1,21 +1,31 @@
 import { useState } from 'react'
-import { capabilities } from '../data'
+import { capabilities, pricing } from '../data'
 
 const DETAIL = {
   '01': {
-    tags: ['User Research', 'Journey Mapping', 'Interaction Design', 'Usability Testing', 'Design Systems'],
-    stat: '12+',
-    statLabel: 'product teams advised',
-  },
-  '02': {
-    tags: ['Logo Systems', 'Visual Identity', 'Brand Guidelines', 'Typography', 'Design Tokens'],
+    tags: ['Logo Systems', 'Visual Identity', 'Brand Guidelines', 'Typography', 'Design Tokens', 'Art Direction'],
     stat: '20+',
     statLabel: 'brands built from scratch',
   },
-  '03': {
-    tags: ['Narrative Structure', 'Investor Decks', 'Sales Decks', 'Data Visualization', 'Storytelling'],
+  '02': {
+    tags: ['Investor Decks', 'Sales Decks', 'Data Visualization', 'Storytelling', 'Keynote', 'Google Slides'],
     stat: '$XM+',
     statLabel: 'raised with our decks',
+  },
+  '03': {
+    tags: ['UI Design', 'Design Systems', 'Responsive Layouts', 'Interaction Design', 'Figma Handoff'],
+    stat: '30+',
+    statLabel: 'sites shipped',
+  },
+  '04': {
+    tags: ['Editorial', 'Collateral', 'Lookbooks', 'Packaging', 'Print-Ready Files'],
+    stat: '100+',
+    statLabel: 'print projects delivered',
+  },
+  '05': {
+    tags: ['OOH', 'Campaign Design', 'Social Assets', 'Display Ads', 'Brand Campaigns'],
+    stat: '50M+',
+    statLabel: 'impressions designed for',
   },
 }
 
@@ -34,13 +44,39 @@ export default function Capabilities() {
           <h2 className="text-5xl md:text-6xl font-medium tracking-tight leading-[1.05] mb-8">
             What<br />we do.
           </h2>
-          <p className="text-neutral-400 leading-relaxed max-w-xs">
-            Full design spectrum — first sketch to shipped product.
-            Across industries, contexts, and constraints.
+          <p className="text-neutral-400 leading-relaxed max-w-xs mb-12">
+            Senior designers only. First sketch to final file.
+            Any industry, any context.
           </p>
 
+          {/* Pricing block */}
+          <div className="border border-neutral-800 p-5 mb-10 max-w-xs">
+            <div className="flex justify-between items-baseline mb-4 pb-4 border-b border-neutral-800">
+              <span className="text-2xl font-medium">{pricing.rate}</span>
+              <span className="font-mono text-xs text-neutral-500">{pricing.model}</span>
+            </div>
+            <div className="flex justify-between items-baseline mb-3 pb-3 border-b border-neutral-800">
+              <span className="font-mono text-xs text-neutral-500">Timeline</span>
+              <span className="font-mono text-xs text-neutral-300">{pricing.timeline} / project</span>
+            </div>
+            <div className="flex flex-col gap-1.5 pt-1">
+              <div className="flex justify-between">
+                <span className="font-mono text-xs text-neutral-600">Commitment</span>
+                <span className="font-mono text-xs text-neutral-500">{pricing.teamHrsMonth}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-mono text-xs text-neutral-600"></span>
+                <span className="font-mono text-xs text-neutral-500">{pricing.teamHrsWeek}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="font-mono text-xs text-neutral-600"></span>
+                <span className="font-mono text-xs text-neutral-500">{pricing.teamHrsDay}</span>
+              </div>
+            </div>
+          </div>
+
           {/* Active nav dots */}
-          <div className="hidden lg:flex flex-col gap-3 mt-16">
+          <div className="hidden lg:flex flex-col gap-3">
             {capabilities.map((cap) => (
               <button
                 key={cap.id}
@@ -113,9 +149,26 @@ function CapPanel({ cap, detail, isLast, onEnter }) {
         </h3>
       </div>
 
-      {/* Bottom: desc + tags + stat */}
+      {/* Bottom: desc + tags + stat + whomst */}
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-end">
-        <p className="text-neutral-400 leading-relaxed">{cap.desc}</p>
+        <div>
+          <p className="text-neutral-400 leading-relaxed mb-6">{cap.desc}</p>
+          {/* Whomst */}
+          <div className="flex flex-wrap gap-2">
+            {cap.whomst.map((name) => (
+              <span
+                key={name}
+                className={`font-mono text-xs px-3 py-1 border transition-colors duration-300 ${
+                  hovered
+                    ? 'border-white/30 text-white'
+                    : 'border-neutral-600 text-neutral-400'
+                }`}
+              >
+                {name}
+              </span>
+            ))}
+          </div>
+        </div>
 
         <div className="flex flex-col gap-6">
           {/* Stat */}

@@ -18,12 +18,16 @@ export default function Hero() {
         </span>
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-px mt-16 bg-neutral-900 border border-neutral-900">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px mt-16 bg-neutral-900 border border-neutral-900">
         {capabilities.map((cap) => (
-          <div key={cap.id} className="bg-black p-8">
+          <div key={cap.id} className="bg-black p-6">
             <p className="font-mono text-xs text-neutral-500 mb-3"><span className="text-neutral-400">⌘</span>{cap.id}</p>
-            <h3 className="text-lg font-medium mb-2">{cap.title}</h3>
-            <p className="text-sm text-neutral-500 leading-relaxed">{cap.desc}</p>
+            <h3 className="text-base font-medium mb-2 leading-tight">{cap.title}</h3>
+            <div className="flex flex-wrap gap-1 mt-3">
+              {cap.whomst.map((name) => (
+                <span key={name} className="font-mono text-xs text-neutral-500">{name}</span>
+              ))}
+            </div>
           </div>
         ))}
       </div>

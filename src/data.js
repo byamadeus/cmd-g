@@ -9,21 +9,45 @@ export const clients = [
   'The Film Zone',
 ]
 
+export const pricing = {
+  rate: '$15K',
+  model: 'Flat-fee per project',
+  timeline: '4 weeks',
+  teamHrsMonth: '48 hrs / mo',
+  teamHrsWeek: '10–12 hrs / week',
+  teamHrsDay: '1–2 hrs / day',
+}
+
 export const capabilities = [
   {
     id: '01',
-    title: 'UX Consulting',
-    desc: 'User research, journey mapping, interaction design, usability testing, and design system strategy.',
+    title: 'Branding',
+    desc: 'Visual identities, logo systems, brand guidelines, and design tokens built to scale.',
+    whomst: ['Avery'],
   },
   {
     id: '02',
-    title: 'Branding',
-    desc: 'Visual identities, brand guidelines, and design tokens that tell your story and scale.',
+    title: 'Keynote Design',
+    desc: 'Investor decks, sales decks, and keynotes — narrative structure, data visualization, and visuals that close.',
+    whomst: ['Amadeus', 'Nina', 'Avery'],
   },
   {
     id: '03',
-    title: 'Pitch Deck Design',
-    desc: 'Narrative structure, information hierarchy, and visual design for decks that close.',
+    title: 'Web Design',
+    desc: 'High-craft web design from concept to handoff — layouts, systems, and interactions built for real products.',
+    whomst: ['Amadeus', 'Nina', 'Avery'],
+  },
+  {
+    id: '04',
+    title: 'Print Design',
+    desc: 'Editorial, collateral, and print-ready design for brands that show up in the physical world.',
+    whomst: ['Amadeus', 'Nina', 'Avery'],
+  },
+  {
+    id: '05',
+    title: 'Marketing Design',
+    desc: 'OOH, campaign, and marketing assets — designed to stop people and move product.',
+    whomst: ['Avery'],
   },
 ]
 
