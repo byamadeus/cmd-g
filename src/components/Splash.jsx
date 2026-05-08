@@ -132,11 +132,9 @@ export default function Splash() {
           <br />
           Any Context.
           <br />
-          We'll{' '}
-          <span className="text-neutral-400 font-mono">
-            {word}
-          </span>{' '}
-          it.
+          <span className="text-neutral-500">
+            We'll {word} it.
+          </span>
         </h1>
 
         {/* CTA */}
@@ -145,12 +143,7 @@ export default function Splash() {
             onClick={copyEmail}
             className="inline-flex items-center gap-4 bg-white text-black px-8 py-4 text-base font-medium hover:bg-neutral-200 transition-colors group"
           >
-            <span>{copied ? '✓ Copied to clipboard' : '⌘G — Group up'}</span>
-            {!copied && (
-              <span className="font-mono text-xs border border-black/20 px-2 py-1 group-hover:border-black/40 transition">
-                ⌘C
-              </span>
-            )}
+            <span>{copied ? '✓ Copied' : '⌘C our email'}</span>
           </button>
         </div>
 
